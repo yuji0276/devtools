@@ -9,7 +9,4 @@ return {
   },
   dependencies = { { "nvim-mini/mini.icons", opts = {} } },
   lazy = false,
-  keys ={
-    {"-",":Oil <Cr>"},
-  },
 }

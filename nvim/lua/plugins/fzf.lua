@@ -6,7 +6,4 @@ return {
   ---@diagnostic disable: missing-fields
   opts = {},
   ---@diagnostic enable: missing-fields
-  keys ={
-    {"<leader>f",function () require("fzf-lua").files() end,},
-  },
 }
