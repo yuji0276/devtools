@@ -62,6 +62,11 @@ config.keys = {
   { key = "7", mods = "SUPER", action = act.DisableDefaultAssignment },
   { key = "8", mods = "SUPER", action = act.DisableDefaultAssignment },
   { key = "9", mods = "SUPER", action = act.DisableDefaultAssignment },
+
+  -- cmd+enter 一行削除
+  { key = 'Backspace', mods = 'CMD', action = act.SendKey { key = 'u', mods = 'CTRL' },},
+  -- alt+enter 単語削除
+  { key = 'Backspace', mods = 'ALT', action = act.SendKey { key = 'w', mods = 'CTRL' },},
 }
 
 config.window_decorations = "RESIZE"
