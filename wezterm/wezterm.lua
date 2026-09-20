@@ -37,9 +37,19 @@ config.send_composed_key_when_right_alt_is_pressed = false
 -- zellij 側は support_kitty_keyboard_protocol が既定で true のため設定不要
 config.enable_kitty_keyboard = true
 
--- zellij の操作コマンドに CMD を使うため、衝突する WezTerm/macOS 既定の割り当てを解除する
 local act = wezterm.action
+
+-- WezTerm には「ウィンドウを閉じる」アクションが無いため、
+-- ウィンドウ内の全タブを閉じることでウィンドウごと消す
+wezterm.on('close-window', function(window, pane)
+  for _, tab in ipairs(window:mux_window():tabs()) do
+    tab:activate()
+    window:perform_action(act.CloseCurrentTab { confirm = false }, tab:active_pane())
+  end
+end)
+
 config.keys = {
+  -- zellij の操作コマンドに CMD を使うため、衝突する WezTerm/macOS 既定の割り当てを解除する
   { key = "n", mods = "SUPER", action = act.DisableDefaultAssignment }, 
   { key = "w", mods = "SUPER", action = act.DisableDefaultAssignment }, 
   { key = "t", mods = "SUPER", action = act.DisableDefaultAssignment }, 
@@ -62,6 +72,9 @@ config.keys = {
   { key = "7", mods = "SUPER", action = act.DisableDefaultAssignment },
   { key = "8", mods = "SUPER", action = act.DisableDefaultAssignment },
   { key = "9", mods = "SUPER", action = act.DisableDefaultAssignment },
+
+  -- cmd+shift+w ウィンドウを閉じる
+  { key = "w", mods = "SUPER|SHIFT", action = act.EmitEvent 'close-window' },
 
   -- cmd+enter 一行削除
   { key = 'Backspace', mods = 'CMD', action = act.SendKey { key = 'u', mods = 'CTRL' },},
