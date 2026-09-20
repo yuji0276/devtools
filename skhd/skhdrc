@@ -1,0 +1,64 @@
+# =============================================================
+# skhd config  (Hyprland-like keybinds)
+#   主モディファイア: alt (Option) = Hyprland の SUPER 相当
+# =============================================================
+
+# ---- タイルのフォーカス移動 (super = cmd + hjkl) -----------
+cmd - h : yabai -m window --focus west  || yabai -m display --focus west
+cmd - j : yabai -m window --focus south
+cmd - k : yabai -m window --focus north
+cmd - l : yabai -m window --focus east  || yabai -m display --focus east
+
+# ---- ウィンドウ入れ替え (SUPER + shift + hjkl) --------------
+shift + alt - h : yabai -m window --swap west
+shift + alt - j : yabai -m window --swap south
+shift + alt - k : yabai -m window --swap north
+shift + alt - l : yabai -m window --swap east
+
+# ---- ウィンドウをツリーごと移動 (SUPER + ctrl + hjkl) -------
+ctrl + alt - h : yabai -m window --warp west
+ctrl + alt - j : yabai -m window --warp south
+ctrl + alt - k : yabai -m window --warp north
+ctrl + alt - l : yabai -m window --warp east
+
+# ---- リサイズ (SUPER + alt... ここは cmd + alt + hjkl) ------
+cmd + alt - h : yabai -m window --resize left:-40:0  ; yabai -m window --resize right:-40:0
+cmd + alt - l : yabai -m window --resize left:40:0   ; yabai -m window --resize right:40:0
+cmd + alt - j : yabai -m window --resize top:0:40    ; yabai -m window --resize bottom:0:40
+cmd + alt - k : yabai -m window --resize top:0:-40   ; yabai -m window --resize bottom:0:-40
+
+# ---- 分割方向トグル (次に開くウィンドウの分割向き) ----------
+alt - e : yabai -m window --toggle split
+
+# ---- レイアウト操作 -----------------------------------------
+alt - r     : yabai -m space --rotate 90          # ツリーを90度回転
+shift + alt - x : yabai -m space --mirror x-axis   # 左右反転
+shift + alt - y : yabai -m space --mirror y-axis   # 上下反転
+alt - b     : yabai -m space --balance             # サイズ均等化
+
+# ---- フロート / フルスクリーン -------------------------------
+alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2   # フロート+中央寄せ
+alt - f : yabai -m window --toggle zoom-fullscreen            # ツリー内フルスクリーン
+shift + alt - f : yabai -m window --toggle native-fullscreen  # macOSネイティブ全画面
+alt - p : yabai -m window --toggle zoom-parent                # 親ノードいっぱいに拡大
+
+# ---- ウィンドウを閉じる -------------------------------------
+shift + alt - q : yabai -m window --close
+
+# =============================================================
+# ワークスペース(Space) 移動  alt - h / alt - l
+#   ※ SIP 有効 = scripting addition なし のため yabai では切替不可。
+#     macOS 標準の「左右のスペースへ移動」(Ctrl+←/→) を osascript で送る。
+#   【必要な事前設定】
+#     1. Mission Control で複数のデスクトップ(Space)を作成しておく
+#     2. システム設定 > キーボード > キーボードショートカット >
+#        Mission Control で「操作スペースを左に移動 / 右に移動」を
+#        有効化 (デフォルト Ctrl+← / Ctrl+→)
+#     3. skhd にアクセシビリティ権限を付与 (キーイベント送出のため)
+#   key code 123 = ← , 124 = →
+# =============================================================
+alt - h : /usr/bin/osascript -e 'tell application "System Events" to key code 123 using control down'
+alt - l : /usr/bin/osascript -e 'tell application "System Events" to key code 124 using control down'
+
+# ---- yabai / skhd の再読み込み ------------------------------
+ctrl + alt - r : yabai --restart-service
