@@ -37,7 +37,6 @@ shift + alt - y : yabai -m space --mirror y-axis   # 上下反転
 alt - b     : yabai -m space --balance             # サイズ均等化
 
 # ---- フロート / フルスクリーン -------------------------------
-alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2   # フロート+中央寄せ
 alt - f : yabai -m window --toggle zoom-fullscreen            # ツリー内フルスクリーン
 shift + alt - f : yabai -m window --toggle native-fullscreen  # macOSネイティブ全画面
 alt - p : yabai -m window --toggle zoom-parent                # 親ノードいっぱいに拡大
