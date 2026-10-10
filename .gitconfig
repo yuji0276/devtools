@@ -1,0 +1,25 @@
+[user]
+	name = yuji0276
+	email = yujikami0110@gmail.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[http "https://git.yuji0276.dev/"]
+	extraHeader = CF-Access-Client-Id: 2f4fbd9ab63f4475ef59ee38f486866c.access
+[pager]
+  diff = delta
+  log = delta
+  reflog = delta
+  show = delta
+
+[delta]
+  plus-style = "syntax #012800"
+  minus-style = "syntax #340001"
+  syntax-theme = Monokai Extended
+  line-numbers = true
+  navigate = true
+
+[interactive]
+  diffFilter = delta --color-onlyextraHeader = CF-Access-Client-Secret: 6772baf0bc21edbc644ab37e83bb3e1a316b4d704268bc4cb0030dedcb9c66ae
