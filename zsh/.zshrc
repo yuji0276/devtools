@@ -25,3 +25,7 @@ source ~/.config/devtools/zsh/aliases.zsh
 
 # plugins
 source ~/.config/devtools/zsh/plugins.zsh
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
