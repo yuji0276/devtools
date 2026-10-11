@@ -39,7 +39,6 @@ alt - b     : yabai -m space --balance             # サイズ均等化
 # ---- フロート / フルスクリーン -------------------------------
 alt - f : yabai -m window --toggle zoom-fullscreen            # ツリー内フルスクリーン
 shift + alt - f : yabai -m window --toggle native-fullscreen  # macOSネイティブ全画面
-alt - p : yabai -m window --toggle zoom-parent                # 親ノードいっぱいに拡大
 
 # ---- ウィンドウを閉じる -------------------------------------
 shift + alt - q : yabai -m window --close
