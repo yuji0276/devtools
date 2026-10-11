@@ -52,3 +52,7 @@ alias grep='rg'
 
 # eza
 alias ls='eza --icons --group-directories-first'
+alias tree='eza -T --icons --git-ignore'
+
+# bat
+alias cat='bat'
