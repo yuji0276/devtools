@@ -46,3 +46,9 @@ alias gd='git diff'
 alias gs='git status'
 alias gsh='git show'
 alias lg='lazygit'
+
+# ripgrep
+alias grep='rg'
+
+# eza
+alias ls='eza --icons --group-directories-first'
