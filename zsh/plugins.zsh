@@ -8,9 +8,6 @@ eval "$(zoxide init zsh)"
 # mise
 eval "$(mise activate zsh)"
 
-. "$HOME/.atuin/bin/env"
-
-eval "$(atuin init zsh)"
 # syntax-highlighting（必ず末尾付近に）
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
