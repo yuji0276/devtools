@@ -12,6 +12,7 @@ alias zl='zellij'
 alias zls='zellij list-sessions'        # list
 alias zla='zellij attach'               # Reconnect(Selection screen without arguments)
 alias zlc='zellij attach --create'      # If available, connect; otherwise, create a new one.
+alias zlk='zellij kill-all-sessions'
 alias trr='terraform'
 
 #========
