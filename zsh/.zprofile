@@ -21,7 +21,7 @@ esac
 export PATH="$PATH:$HOME/.local/share/go/bin"
 
 # LM Studio
-export PATH="$PATH:/Users/yuji/.lmstudio/bin"
+export PATH="$PATH:$XDG_DATA_HOME/lmstudio/bin"
 
 # Antigravity
 export PATH="/Users/yuji/.antigravity/antigravity/bin:$PATH"
