@@ -37,7 +37,7 @@ wmr() { yabai --restart-service; skhd --restart-service; }
 
 #========
 # git /lazygit
-#   config: ~/.gitconfig
+#   config: ~/.config/git/config
 #========
 alias g='git'
 alias ga='git add '

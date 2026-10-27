@@ -1,0 +1,9 @@
+#==========================================================
+# bashrc — bash は XDG 非対応のため ~/.bashrc からリンクして読む
+#==========================================================
+
+# 履歴を $XDG_STATE_HOME へ
+mkdir -p "${XDG_STATE_HOME:-$HOME/.local/state}/bash"
+HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/bash/history"
+
+eval "$(atuin init bash)"

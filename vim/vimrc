@@ -1,0 +1,36 @@
+ " XDG: vimrc は ~/.config/vim、プラグインは $XDG_DATA_HOME、viminfo は $XDG_STATE_HOME
+  set viminfofile=$XDG_STATE_HOME/vim/viminfo
+
+  call plug#begin($XDG_DATA_HOME . '/vim/plugged')
+
+  Plug 'tpope/vim-sensible'
+  Plug 'tpope/vim-surround'
+
+  Plug 'vim-python/python-syntax'
+  Plug 'Vimjas/vim-python-pep8-indent'
+  Plug 'dense-analysis/ale'
+  Plug 'davidhalter/jedi-vim'
+
+  Plug 'preservim/nerdtree'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+
+  call plug#end()
+
+  let g:ale_linters = {'python': ['flake8', 'mypy']}
+  let g:ale_fixers = {'python': ['black', 'isort']}
+  let g:ale_fix_on_save = 1
+  let g:ale_sign_error = '>>'
+  let g:ale_sign_warning = '--'
+
+  let g:jedi#completions_command = "<C-Space>"
+  let g:jedi#goto_command = "<leader>d"
+  let g:jedi#documentation_command = "K"
+  let g:jedi#rename_command = "<leader>r"
+  let g:jedi#usages_command = "<leader>n"
+
+  if has('mac')
+    set clipboard=unnamed
+  else
+    set clipboard=unnamedplus
+  endif

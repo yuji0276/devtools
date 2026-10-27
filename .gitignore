@@ -1,0 +1,3 @@
+# macOS Terminal.app が $ZDOTDIR に作るセッション履歴
+zsh/.zsh_sessions/
+.DS_Store

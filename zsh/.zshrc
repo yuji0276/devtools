@@ -7,22 +7,24 @@
 # 補完
 #========
 FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-autoload -Uz compinit && compinit
+mkdir -p "$XDG_CACHE_HOME/zsh"
+autoload -Uz compinit && compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' menu select
 
 # 履歴
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/.zsh_history
+mkdir -p "$XDG_STATE_HOME/zsh"
+HISTFILE="$XDG_STATE_HOME/zsh/history"
 setopt HIST_IGNORE_DUPS
 setopt SHARE_HISTORY
 setopt HIST_IGNORE_SPACE
 
 # alias for develop
-source ~/.config/devtools/zsh/aliases.zsh
+source "$ZDOTDIR/aliases.zsh"
 
 
 # plugins
-source ~/.config/devtools/zsh/plugins.zsh
+source "$ZDOTDIR/plugins.zsh"
 
