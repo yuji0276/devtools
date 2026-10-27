@@ -11,4 +11,4 @@ end, { desc = "ファイル検索" })
 map("n","<leader>e", "<Cmd>:lua vim.diagnostic.open_float()<CR>",{desc = "カーソル行のエラーメッセージをポップアップで表示する"})
 
 -- markdown-preview.nvim
-map("n", "<D-k>v", "<Cmd>MarkdownPreview<CR>", { desc = "Markdownをブラウザでプレビュー" })
+map("n", "<D-m>v", "<Cmd>MarkdownPreview<CR>", { desc = "Markdownをブラウザでプレビュー" })
