@@ -57,3 +57,8 @@ alias tree='eza -T --icons --git-ignore'
 
 # bat
 alias cat='bat'
+
+#========
+# Markdown
+#========
+alias md2pdf='$ZDOTDIR/scripts/md2pdf.zsh'
