@@ -2,9 +2,7 @@
 return {
   init_options = {
     experimentalFeatures = {
-      -- 必須属性を補完時に自動で埋める
       prefillRequiredFields = true,
-      -- 保存時に terraform validate を実行する
       validateOnSave = true,
     },
   },
