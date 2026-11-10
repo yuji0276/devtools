@@ -2,7 +2,7 @@ return {
   {
     "mason-org/mason-lspconfig.nvim",
     opts = {
-    ensure_installed ={"lua_ls","gopls"},
+    ensure_installed ={"lua_ls","gopls","terraformls"},
   },
     dependencies = {
       { "mason-org/mason.nvim", opts = {} },
