@@ -1,6 +1,4 @@
 #!/usr/bin/env zsh
-# Markdown を typst 経由で PDF に変換する
-# 使い方: md2pdf file1.md [file2.md ...]
 
 emulate -L zsh
 setopt err_exit no_unset pipe_fail
