@@ -1,9 +1,3 @@
-#==========================================================
-# devtools/zsh/aliases.zsh — aliases for deveop
-#   Sourced from .zshrc
-#==========================================================
-
-
 #========
 # zellij (Terminal Workspace)
 #   config: ~/.config/zellij
@@ -59,6 +53,6 @@ alias tree='eza -T --icons --git-ignore'
 alias cat='bat'
 
 #========
-# Markdown
+# Markdown transfer
 #========
 alias md2pdf='$ZDOTDIR/scripts/md2pdf.zsh'

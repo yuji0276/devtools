@@ -1,28 +1,21 @@
-#==========================================================
-# .zshenv — すべての zsh で最初に評価される
-#   ~/.zshenv はこのファイルへのシンボリックリンク。
-#   XDG Base Directory と ZDOTDIR の定義のみを置く。
-#==========================================================
-
-# XDG Base Directory
+# Base Directory
 export CONFIG_HOME="$HOME/.config"
 export DATA_HOME="$HOME/.local/share"
 export STATE_HOME="$HOME/.local/state"
 export CACHE_HOME="$HOME/.cache"
 
 # 以降の .zprofile / .zshrc は $ZDOTDIR から読む
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export ZDOTDIR="$CONFIG_HOME/zsh"
 
-# 各ツールの履歴を $XDG_STATE_HOME へ
-export LESSHISTFILE="$XDG_STATE_HOME/less/history"
-export PYTHON_HISTORY="$XDG_STATE_HOME/python/history"
-export PSQL_HISTORY="$XDG_STATE_HOME/psql/history"
-export MYSQL_HISTFILE="$XDG_STATE_HOME/mysql/history"
-export REDISCLI_HISTFILE="$XDG_STATE_HOME/redis/history"
+# 各ツールの履歴を $STATE_HOME へ
+export LESSHISTFILE="$STATE_HOME/less/history"
+export PYTHON_HISTORY="$STATE_HOME/python/history"
+export PSQL_HISTORY="$STATE_HOME/psql/history"
+export MYSQL_HISTFILE="$STATE_HOME/mysql/history"
+export REDISCLI_HISTFILE="$STATE_HOME/redis/history"
 
-# 各ツールのデータ / キャッシュを XDG へ
-export npm_config_cache="$XDG_CACHE_HOME/npm"
-export YARN_GLOBAL_FOLDER="$XDG_CACHE_HOME/yarn"
-export MPLCONFIGDIR="$XDG_CACHE_HOME/matplotlib"
-export ANSIBLE_HOME="$XDG_DATA_HOME/ansible"
+export npm_config_cache="$CACHE_HOME/npm"
+export YARN_GLOBAL_FOLDER="$CACHE_HOME/yarn"
+export MPLCONFIGDIR="$CACHE_HOME/matplotlib"
+export ANSIBLE_HOME="$DATA_HOME/ansible"
 export CHECKPOINT_DISABLE=1   # terraform の ~/.terraform.d/checkpoint_* を作らせない
