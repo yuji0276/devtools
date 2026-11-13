@@ -12,3 +12,5 @@ vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 
 vim.opt.clipboard:append('unnamedplus')
+
+vim.filetype.add({ extension = { tf = "terraform" } })
